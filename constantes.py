@@ -5,10 +5,11 @@ EHUB_EMAIL = "guilherme.cruz@elera.com"
 EHUB_SENHA = "Ber@2021!"
 
 #Diretórios
-FORECAST_ASSUMPTIONS_DIR = r"C:\Users\lumm\OneDrive - Elera\Documentos\Python Scripts\Book no BI\Recursos\Forecast Assumptions.xlsx"
-BD_OPERACOES_DIR = r"C:\Users\lumm\OneDrive - Elera\Documentos\Python Scripts\Book no BI\Recursos\BD_OPERACOES.xlsm"
+DIRETO_ATIVO = os.getcwd()
+FORECAST_ASSUMPTIONS_DIR = f'{DIRETO_ATIVO}\\Forecast Assumptions.xlsx'
+BD_OPERACOES_DIR = f'{DIRETO_ATIVO}\\Recursos\\BD_OPERACOES.xlsm'
 INFLACOES_DFS_DIR = r'Z:\Risk\28. Portfolio Data Base\09.Inflação\Dataframe'
-SALVA_OS_DFS = f'{os.getcwd()}\Dataframe'
+SALVA_OS_DFS = f'{DIRETO_ATIVO}\\Dataframe'
 
 # Constantes para o Book
 MES_INICIAL = '2022-01-01'
@@ -34,3 +35,4 @@ MESES_BD_OPERACOES = ANOS_BD_OPERACOES * 12
 COL_INICIO_VOLUME = 26
 COL_INICIO_PRECO = 92
 
+print(FORECAST_ASSUMPTIONS_DIR)

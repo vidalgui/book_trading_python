@@ -9,6 +9,7 @@ from bd_operacoes import captura_bd_operacoes, etl_bd_operacoes
 from precos_book import curva_precos_para_book
 """
 Etapa Atual:
+
 - Alteraras operações da BD Operacoes
 
 O que ainda precisa fazer nesse codigo:

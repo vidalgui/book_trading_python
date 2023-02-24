@@ -54,7 +54,7 @@ def _salva_dataframes(df, nome, caminho=SALVA_OS_DFS, formato='Excel'):
             if os.path.exists(arq):
                 os.remove(arq)
 
-            df.to_excel(arq)
+            df.to_excel(arq, index=False)
 
         elif formato == 'csv':     
             arq = f'{caminho}\\{nome}.csv'

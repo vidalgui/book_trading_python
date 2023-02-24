@@ -76,7 +76,7 @@ def etl_bd_operacoes(df_bd_operacos, df_precos_book):
     bd_operacoes.loc[linhas_de_pld_mais,'MOD PREÇO'] = df_uniao_bd_operacoes_e_periodo.loc[linhas_de_pld_mais,'Preco'] + df_uniao_bd_operacoes_e_periodo.loc[linhas_de_pld_mais,'Valor']
 
     # Preco com IPCA = Ajustado
-    linhas_de_preco_ajustado =  ~pd.isnull(df_uniao_bd_operacoes_e_periodo['ÍNDICE'])
+    linhas_de_preco_ajustado = ~pd.isnull(df_uniao_bd_operacoes_e_periodo['ÍNDICE'])
     bd_operacoes.loc[linhas_de_preco_ajustado,'MOD PREÇO'] = 'Ajustado'
 
 

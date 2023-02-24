@@ -6,7 +6,7 @@ from constantes import *
 from _auxiliar import *
 
 from bd_operacoes import captura_bd_operacoes, etl_bd_operacoes
-from precos_book import curva_precos_para_book
+from precos_book import curva_precos_para_book, captura_fpc
 """
 Etapa Atual:
 
@@ -32,8 +32,7 @@ def main():
     print('> Começando o processo do Book de Trading <\n')
 
     # Faz tudo de novo ou usa os Exceis prontos?
-    faz_tudo_de_novo = False
-
+    faz_tudo_de_novo = True
     if faz_tudo_de_novo:
 
         bd_operacoes = captura_bd_operacoes()
@@ -41,6 +40,10 @@ def main():
 
         precos_book = curva_precos_para_book()
         print('> Processo de captura da Curva de Precos para o Book de Trading finalizado com sucesso <\n')
+
+        fpc = captura_fpc()
+        print('> Processo de captura da FPC para o Book de Trading finalizado com sucesso <\n')
+
     else:
 
         bd_operacoes = pd.read_excel(f'{SALVA_OS_DFS}/bd_operacoes_em_linhas.xlsx')

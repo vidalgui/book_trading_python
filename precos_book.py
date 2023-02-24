@@ -8,6 +8,12 @@ from _auxiliar import *
 from ehubAPI import forwardCurve
 from _auxiliar import _periodo_e_horas_meses, _ultimo_dia_util, _salva_dataframes
 
+"""
+Neste código, atualmente estamos utilizando apenas a Curva Forward do eHub como parâmetro para os preços.
+Para o Book de Trading, o ideal é utilizarmos os preços de negociações fechadas no dia útil anterior.
+Para isto, precisamos de uma função que retorne os preços da mesma forma que fazemos manualmente no Book.
+"""
+
 # Monta a curva de precos que vai ser utilizada no Book de Trading
 def curva_precos_para_book(mes_inicial= MES_INICIAL):
 
@@ -128,3 +134,10 @@ def _precos_realizados_forecast_assumptions(mes_inicial= MES_INICIAL, forecast_a
 
     # Retorna um Dataframe
     return forecast_assumptions
+
+def captura_fpc():
+    df_fpc = pd.read_excel(r'Z:\Risk\01. Risk Governance\03.CRMG\FPC\FPC - Forward Price Curve.xlsm',
+                           sheet_name="FPC_TABLE", usecols="B:K", header=3)
+    df_fpc = df_fpc.loc[df_fpc["Date"] >= "2015-12-31"]
+    _salva_dataframes(df_fpc, 'FPC', formato="Excel")
+    return df_fpc

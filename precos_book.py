@@ -136,7 +136,7 @@ def _precos_realizados_forecast_assumptions(mes_inicial= MES_INICIAL, forecast_a
     return forecast_assumptions
 
 def captura_fpc():
-    df_fpc = pd.read_excel(r'Z:\Risk\01. Risk Governance\03.CRMG\FPC\FPC - Forward Price Curve.xlsm',
+    df_fpc = pd.read_excel(FPC_DIR,
                            sheet_name="FPC_TABLE", usecols="B:K", header=3)
     df_fpc = df_fpc.loc[df_fpc["Date"] >= "2015-12-31"]
     _salva_dataframes(df_fpc, 'FPC', formato="Excel")

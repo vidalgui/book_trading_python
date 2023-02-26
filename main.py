@@ -7,6 +7,7 @@ from _auxiliar import *
 
 from bd_operacoes import captura_bd_operacoes, etl_bd_operacoes
 from precos_book import curva_precos_para_book, captura_fpc
+from calculo_var import _calcula_weekly_returns
 """
 Etapa Atual:
 
@@ -51,6 +52,8 @@ def main():
 
     etl_bd_operacoes(df_bd_operacos=bd_operacoes, df_precos_book=precos_book)
     print('> Processo de etl da BD Operacoes finalizado com sucesso <\n')
+    _calcula_weekly_returns()
+    print('> Processo de cálculo de Weekly Returns finalizado com sucesso <\n')
 
 
 if __name__ == '__main__':

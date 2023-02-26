@@ -10,7 +10,7 @@ FORECAST_ASSUMPTIONS_DIR = f'{DIRETO_ATIVO}\\Forecast Assumptions.xlsx'
 BD_OPERACOES_DIR = f'{DIRETO_ATIVO}\\Recursos\\BD_OPERACOES.xlsm'
 INFLACOES_DFS_DIR = r'Z:\Risk\28. Portfolio Data Base\09.Inflação\Dataframe'
 SALVA_OS_DFS = f'{DIRETO_ATIVO}\\Dataframe'
-FPC_DIR = r'Z:\Risk\01. Risk Governance\03.CRMG\FPC\FPC - Forward Price Curve.xlsm'
+FPC_DIR = f'{DIRETO_ATIVO}\\Recursos\\FPC.xlsm'
 
 # Constantes para o Book
 MES_INICIAL = '2022-01-01'
